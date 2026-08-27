@@ -1,0 +1,147 @@
+{
+    "info": {
+        "name": "Order Execution Engine API",
+        "description": "API collection for testing the Order Execution Engine with DEX routing and WebSocket updates",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/health",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "health"
+                    ]
+                },
+                "description": "Check if the server is running"
+            }
+        },
+        {
+            "name": "Execute Order (WebSocket)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/orders/execute?tokenIn=SOL&tokenOut=USDC&amountIn=1.5&slippage=0.01",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ],
+                    "query": [
+                        {
+                            "key": "tokenIn",
+                            "value": "SOL",
+                            "description": "Input token symbol"
+                        },
+                        {
+                            "key": "tokenOut",
+                            "value": "USDC",
+                            "description": "Output token symbol"
+                        },
+                        {
+                            "key": "amountIn",
+                            "value": "1.5",
+                            "description": "Amount of input token"
+                        },
+                        {
+                            "key": "slippage",
+                            "value": "0.01",
+                            "description": "Slippage tolerance (0.01 = 1%)"
+                        }
+                    ]
+                },
+                "description": "Submit an order and receive real-time updates via WebSocket.\n\nNote: In Postman, use the WebSocket Request feature to connect and see live status updates."
+            }
+        },
+        {
+            "name": "Execute Order - ETH to USDC",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/orders/execute?tokenIn=ETH&tokenOut=USDC&amountIn=2.0&slippage=0.02",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ],
+                    "query": [
+                        {
+                            "key": "tokenIn",
+                            "value": "ETH"
+                        },
+                        {
+                            "key": "tokenOut",
+                            "value": "USDC"
+                        },
+                        {
+                            "key": "amountIn",
+                            "value": "2.0"
+                        },
+                        {
+                            "key": "slippage",
+                            "value": "0.02"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Execute Order - BTC to SOL",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/orders/execute?tokenIn=BTC&tokenOut=SOL&amountIn=0.5&slippage=0.015",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "orders",
+                        "execute"
+                    ],
+                    "query": [
+                        {
+                            "key": "tokenIn",
+                            "value": "BTC"
+                        },
+                        {
+                            "key": "tokenOut",
+                            "value": "SOL"
+                        },
+                        {
+                            "key": "amountIn",
+                            "value": "0.5"
+                        },
+                        {
+                            "key": "slippage",
+                            "value": "0.015"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:3001",
+            "type": "string"
+        }
+    ]
+}

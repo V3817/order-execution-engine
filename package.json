@@ -1,0 +1,47 @@
+{
+  "name": "order-execution-engine",
+  "version": "1.0.0",
+  "description": "Order Execution Engine with DEX routing and WebSocket updates",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "trading",
+    "dex",
+    "websocket",
+    "order-execution"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "@types/uuid": "^10.0.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "fastify": "^5.2.2",
+    "@fastify/websocket": "^11.1.0",
+    "@fastify/cors": "^10.0.1",
+    "bullmq": "^5.31.2",
+    "ioredis": "^5.4.2",
+    "pg": "^8.14.0",
+    "dotenv": "^16.4.7",
+    "uuid": "^11.0.5",
+    "pino-pretty": "^13.1.2",
+    "@types/node": "^24.10.1",
+    "@types/pg": "^8.15.6"
+  }
+}
